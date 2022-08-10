@@ -2,7 +2,7 @@
 use per_project;
 
 -- 전체 컬럼 조회  
-SELECT * from share;  
+SELECT * from share_review;  
 
 -- 컬럼 추가
 ALTER TABLE member2 ADD COLUMN nickname varchar(45);
