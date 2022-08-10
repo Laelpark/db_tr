@@ -1,8 +1,8 @@
 -- per_project database를 사용하겠다.
 use per_project;
 
--- 전체 컬럼 조회
-SELECT * from member2;
+-- 전체 컬럼 조회  
+SELECT * from share;  
 
 -- 컬럼 추가
 ALTER TABLE member2 ADD COLUMN nickname varchar(45);
