@@ -24,7 +24,7 @@ ALTER TABLE member2 CHANGE COLUMN nameEng nameEn varchar(45);
 ALTER TABLE member2 drop COLUMN nick;
 
 -- row 삭제
-DELETE FROM share_member WHERE seq = 14;
+DELETE FROM share_member WHERE seq = 28;
 -- delete from 값 뒤에 바로 테이블 이름쓰지 말고 무의식적으로 where 먼저 치기, 안그럼 테이블 전체가 날아감
 
 -- commit / rollback
