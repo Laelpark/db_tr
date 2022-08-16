@@ -1,22 +1,108 @@
-CREATE TABLE IF NOT EXISTS `per_project`.`codeGroup` (
-  `ccgSeq` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
-  PRIMARY KEY (`ccgSeq`))
-ENGINE = InnoDB
+use per_project;
+
+
+-- 공통코드
+-- 1. 공통코드데이터 넣기
+-- 2. 공통코드 쿼리 작성
+SELECT
+	a.ccgSeq
+    , a.name
+    , b.cdSeq
+    , b.name
+FROM
+	codeGroup a
+	LEFT JOIN code b on b.codeGroup_ccgSeq = a.ccgSeq
+;
+select * from codeGroup;
+select * from code;
+
+
+-- 로그인
+-- 아이디, 패스워드 
+
+select 
+	name
+    , id
+from share_member
+where 1=1 
+	and id = "gottkfkd" 
+	and pw = "98765"
 ;
 
-CREATE TABLE IF NOT EXISTS `per_project`.`code` (
-  `cdSeq` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
-  `codeGroup_ccgSeq` INT NOT NULL,
-  PRIMARY KEY (`cdSeq`),
-  INDEX `fk_code_codeGroup1_idx` (`codeGroup_ccgSeq` ASC) VISIBLE,
-  CONSTRAINT `fk_code_codeGroup1`
-    FOREIGN KEY (`codeGroup_ccgSeq`)
-    REFERENCES `per_project`.`codeGroup` (`ccgSeq`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
+
+-- share hot list 
+select
+	food_div
+    ,title
+    ,people_num
+    ,info
+    ,place
+    ,time
+    ,price
+    ,share_member_seq
+    ,share_sharing_member_seq
+from 
+	share
+where 1=1
+	-- and people_num = "2인"
+	-- and title like '%떡%'
+	-- and food_div = 1
+	and place like 'ㅇㅇ%%' 
 ;
-use per_project;
-show tables;
+
+-- share_review
+select
+	title
+    ,people_num
+    ,place
+    ,time
+    ,price
+    ,content
+    ,share_member_seq
+from 
+	share_review
+where 1=1
+	and people_num
+	and place like 'ㅇㅇ%%'
+;
+
+INSERT INTO share_review(
+    title
+    ,people_num
+    ,place
+    ,time
+    ,price
+    ,content
+    ,share_member_seq
+)
+VALUES(
+    "피자나라 콤비네이션 2인 구함"
+    ,"2인"
+    ,"oo은행 앞"
+    ,"17:40"
+    ,"8,000원"
+    ,"5:40 oo은행 앞에서 피자나라 콤비네이션 거래하실 2인 구해요!"
+    ,2
+)
+;
+SELECT
+   seq
+    ,title
+    ,people_num
+    ,place
+    ,time
+    ,price
+    ,content
+    ,share_member_seq
+FROM share_review
+ WHERE 1=1
+    AND   seq = "1"
+--   AND title = "피자나라 콤비네이션 2인 구함"
+    -- AND people_num
+--     AND place
+--     AND time
+--     AND price
+--     AND content
+--     AND share_member_seq
+    -- AND / OR 둘이 같이 사용할 경우 ()
+;
