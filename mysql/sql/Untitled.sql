@@ -7,15 +7,24 @@ use per_project;
 SELECT
 	a.ccgSeq
     , a.name
+    ,a.name_eng
     , b.cdSeq
     , b.name
 FROM
 	codeGroup a
-	LEFT JOIN code b on b.codeGroup_ccgSeq = a.ccgSeq
+	LEFT JOIN code b on a.codeGroup_ccgSeq = a.ccgSeq
 ;
 select * from codeGroup;
 select * from code;
 
+SELECT
+	b.*
+	,a.ccgSeq
+	,a.name
+FROM 
+	code b
+JOIN codeGroup a on a.ccgSeq = b.codeGroup_ccgSeq
+;
 
 -- 로그인
 -- 아이디, 패스워드 
