@@ -1,7 +1,10 @@
-SELECT * FROM per_project.codeGroup;
+SELECT * FROM per_project;
+SELECT * FROM codeGroup;
 
 ALTER TABLE codeGroup
-	ADD COLUMN name_eng varchar(45);
+	ADD COLUMN example varchar(45);
+    
+ALTER TABLE codeGroup MODIFY COLUMN codegroup_ex INT;
     
 SELECT count(*)
 FROM code;
@@ -16,9 +19,16 @@ group by
 b.codeGroup_ccgSeq
 ;
 
+SELECT
+	a.*
+FROM 
+	codeGroup a
+ WHERE 1=1
+AND   codegroup_ex = 0
+;
 
 SELECT
 	 a.*
-	,count(b.codeGroup_ccgSeq) AS 코드갯수;
+	,count(b.codeGroup_ccgSeq) AS 코드갯수
 FROM 
-	codeGroup a
+	codeGroup;
