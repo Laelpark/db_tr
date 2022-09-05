@@ -3,7 +3,9 @@ SELECT * FROM code;
 ALTER TABLE code CHANGE COLUMN codeGroupName_kr codeName varchar(45);
 
 ALTER TABLE code
-	ADD COLUMN example varchar(45);
+	ADD COLUMN delNy tinyint;
+    
+ALTER TABLE code CHANGE COLUMN delNy cdDelNy tinyint; 
 
 SELECT
 	b.*

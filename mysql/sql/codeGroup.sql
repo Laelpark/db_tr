@@ -2,12 +2,15 @@ SELECT * FROM per_project;
 SELECT * FROM codeGroup;
 
 ALTER TABLE codeGroup
-	ADD COLUMN example varchar(45);
+	ADD COLUMN DelNy Tinyint;
+    
+ALTER TABLE codeGroup drop COLUMN DelNy;
     
 ALTER TABLE codeGroup MODIFY COLUMN codegroup_ex INT;
     
 SELECT count(*)
 FROM code;
+
 
 SELECT
 	a.*
@@ -19,6 +22,13 @@ group by
 b.codeGroup_ccgSeq
 ;
 
+
+SELECT
+	 a.*
+	,count(b.codeGroup_ccgSeq) AS 코드갯수
+FROM 
+	codeGroup;
+
 SELECT
 	a.*
 FROM 
@@ -26,9 +36,3 @@ FROM
  WHERE 1=1
 AND   codegroup_ex = 0
 ;
-
-SELECT
-	 a.*
-	,count(b.codeGroup_ccgSeq) AS 코드갯수
-FROM 
-	codeGroup;
