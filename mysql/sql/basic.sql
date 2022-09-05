@@ -12,7 +12,7 @@ ALTER TABLE member2 ADD COLUMN name varchar(45) AFTER member2;
 ALTER TABLE member2 ADD COLUMN id varchar(45) AFTER name;
 ALTER TABLE member2 ADD COLUMN pw varchar(45) AFTER id;
 
--- 컬럼 변경
+-- 컬럼 데이터 타입 변경
 ALTER TABLE member2 MODIFY COLUMN nameEng varchar(100);
 ALTER TABLE member2 MODIFY COLUMN pw INT;
 
