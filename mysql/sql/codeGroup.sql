@@ -9,7 +9,7 @@ ALTER TABLE codeGroup drop COLUMN DelNy;
 ALTER TABLE codeGroup MODIFY COLUMN codegroup_ex INT;
     
 SELECT count(*)
-FROM code;
+FROM codeGroup;
 
 
 SELECT

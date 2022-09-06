@@ -7,6 +7,8 @@ ALTER TABLE code
     
 ALTER TABLE code CHANGE COLUMN delNy cdDelNy tinyint; 
 
+alter table code change  codeGroup_ccgSeq ccgSeq int;
+
 SELECT
 	b.*
 	,a.ccgSeq
