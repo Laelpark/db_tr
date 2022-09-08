@@ -1,4 +1,5 @@
 USE per_project;
+select * from share;
 
 SELECT
 	a.seq
