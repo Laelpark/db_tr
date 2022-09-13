@@ -4,7 +4,9 @@ SELECT * FROM codeGroup;
 ALTER TABLE codeGroup
 	ADD COLUMN DelNy Tinyint;
     
-ALTER TABLE codeGroup drop COLUMN DelNy;
+ALTER TABLE codeGroup drop COLUMN codeGroup_del;
+ALTER TABLE codeGroup CHANGE COLUMN  DelNy codeGroup_del tinyint; 
+alter table codeGroup add column codeGroup_I3 varchar(45);
     
 ALTER TABLE codeGroup MODIFY COLUMN codegroup_ex INT;
     
