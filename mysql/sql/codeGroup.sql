@@ -1,14 +1,14 @@
 SELECT * FROM per_project;
-SELECT * FROM codeGroup;
+
 
 ALTER TABLE codeGroup
-	ADD COLUMN DelNy Tinyint;
+	ADD COLUMN count datetime after modifiedAt;
     
-ALTER TABLE codeGroup drop COLUMN codeGroup_del;
+ALTER TABLE codeGroup drop COLUMN count;
 ALTER TABLE codeGroup CHANGE COLUMN  DelNy codeGroup_del tinyint; 
 alter table codeGroup add column codeGroup_I3 varchar(45);
     
-ALTER TABLE codeGroup MODIFY COLUMN codegroup_ex INT;
+ALTER TABLE codeGroup MODIFY COLUMN count INT;
     
 SELECT count(*)
 FROM codeGroup;
