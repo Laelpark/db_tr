@@ -38,3 +38,4 @@ FROM
  WHERE 1=1
 AND   codegroup_ex = 0
 ;
+
