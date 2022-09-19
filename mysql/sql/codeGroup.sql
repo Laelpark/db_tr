@@ -1,5 +1,5 @@
 SELECT * FROM per_project;
-
+SELECT * FROM codeGroup;
 
 ALTER TABLE codeGroup
 	ADD COLUMN count datetime after modifiedAt;
