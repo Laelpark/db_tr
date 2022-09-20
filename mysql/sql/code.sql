@@ -1,9 +1,9 @@
 use per_project;
-SELECT * FROM code;
+SELECT * FROM member code;
 ALTER TABLE code CHANGE COLUMN codeGroupName_kr codeName varchar(45);
 
 ALTER TABLE code
-	ADD COLUMN delNy tinyint;
+	ADD COLUMN gender tinyint;
     
 ALTER TABLE code CHANGE COLUMN delNy cdDelNy tinyint; 
 
@@ -36,3 +36,6 @@ JOIN codeGroup a on a.ccgSeq = b.codeGroup_ccgSeq
 WHERE 1=1
 AND  b.example  = 0
 ;
+
+ALTER TABLE code drop COLUMN gender;
+select * from code where cdDelNy = 0;

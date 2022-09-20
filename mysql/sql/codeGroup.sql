@@ -5,7 +5,7 @@ ALTER TABLE codeGroup
 	ADD COLUMN count datetime after modifiedAt;
     
 ALTER TABLE codeGroup drop COLUMN count;
-DELETE FROM codeGroup WHERE ccgSeq = 99;
+DELETE FROM codeGroup WHERE ccgSeq = 105;
 ALTER TABLE codeGroup CHANGE COLUMN  DelNy codeGroup_del tinyint; 
 alter table codeGroup add column codeGroup_I3 varchar(45);
     
