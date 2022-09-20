@@ -5,6 +5,7 @@ ALTER TABLE codeGroup
 	ADD COLUMN count datetime after modifiedAt;
     
 ALTER TABLE codeGroup drop COLUMN count;
+DELETE FROM codeGroup WHERE ccgSeq = 99;
 ALTER TABLE codeGroup CHANGE COLUMN  DelNy codeGroup_del tinyint; 
 alter table codeGroup add column codeGroup_I3 varchar(45);
     
@@ -39,3 +40,15 @@ FROM
 AND   codegroup_ex = 0
 ;
 
+
+
+INSERT INTO codeGroup (
+			name
+            ,name_eng
+		)
+		VALUES (
+			"asdasd"
+            ,"sadasdlnl"
+		)
+		;
+select * from codeGroup;
