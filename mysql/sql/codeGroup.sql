@@ -2,7 +2,10 @@ SELECT * FROM per_project;
 SELECT * FROM codeGroup;
 
 ALTER TABLE codeGroup
-	ADD COLUMN count datetime after modifiedAt;
+	ADD COLUMN sample6_extraAddress datetime after sample6_detailAddress;
+    
+ALTER TABLE codeGroup MODIFY COLUMN sample6_extraAddress varchar(100);
+ALTER TABLE codeGroup MODIFY COLUMN pw INT;
     
 ALTER TABLE codeGroup drop COLUMN count;
 DELETE FROM codeGroup WHERE ccgSeq = 105;
