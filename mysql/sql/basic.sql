@@ -13,7 +13,7 @@ ALTER TABLE member2 ADD COLUMN id varchar(45) AFTER name;
 ALTER TABLE member2 ADD COLUMN pw varchar(45) AFTER id;
 
 -- 컬럼 데이터 타입 변경
-ALTER TABLE member2 MODIFY COLUMN nameEng varchar(100);
+ALTER TABLE share MODIFY COLUMN people_num INT;
 ALTER TABLE member2 MODIFY COLUMN pw INT;
 
 -- 칼럼 이름 변경
@@ -21,7 +21,7 @@ ALTER TABLE member2 CHANGE COLUMN nickname nick varchar(45);
 ALTER TABLE member2 CHANGE COLUMN nameEng nameEn varchar(45);
 
 -- 칼럼 삭제
-ALTER TABLE member2 drop COLUMN nick;
+ALTER TABLE share drop COLUMN profile;
 
 -- row 삭제
 DELETE FROM share_member WHERE seq = 28;
