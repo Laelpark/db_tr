@@ -1,0 +1,1 @@
+SELECT * FROM per_project.share_member;
