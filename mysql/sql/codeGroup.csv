@@ -1,0 +1,7 @@
+ccgSeq,name,name_eng,cgAnother,cgUserNy,cgOrder,cgReferencev1,cgReferencev2,cgReferencev3,cgReferencevI1,cgReferencevI2,cgReferencevI3,cgDelNy
+1,성별,gender,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0
+2,이메일,email,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0
+3,통신사,telecom,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0
+4,카테고리,category,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0
+5,인원,people,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0
+6,시간,time,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0

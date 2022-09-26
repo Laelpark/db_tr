@@ -40,3 +40,6 @@ FROM share_member a
 		and c.seq = a.seq
 where 1=1
     and name like '%%엘'
+;
+    
+ALTER TABLE share ADD COLUMN DelNy tinyint after price;
