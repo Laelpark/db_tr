@@ -21,3 +21,5 @@ COLLATE = utf8mb4_0900_ai_ci
 ;
 
 select*from shareCodeGroup;
+
+ALTER TABLE share drop COLUMN profile;
