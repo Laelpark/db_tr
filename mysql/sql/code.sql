@@ -1,5 +1,5 @@
 use per_project;
-SELECT * FROM member code;
+SELECT * FROM code;
 ALTER TABLE code CHANGE COLUMN codeGroupName_kr codeName varchar(45);
 
 ALTER TABLE code
