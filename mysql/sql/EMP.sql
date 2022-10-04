@@ -1,0 +1,30 @@
+SELECT 
+	COUNT(*)
+FROM test.EMP
+WHERE 1=1
+;
+
+SELECT * FROM test.EMP
+WHERE 1=1
+ AND ENAME like 's%%'
+;
+
+SELECT  
+	EMPNO
+	,ENAME
+    ,SAL
+FROM test.EMP
+WHERE 1=1
+ AND SAL between 1200 and 3500
+;
+
+SELECT
+    a.DEPTNO
+    ,b.DNAME
+    ,AVG(a.SAL) AS AVG
+    ,MAX(a.SAL) AS MAX
+    ,MIN(a.SAL) AS MIN
+FROM EMP a
+    INNER JOIN DEPT b ON b.DEPTNO = a.DEPTNO
+WHERE 1=1
+GROUP BY DEPTNO;
