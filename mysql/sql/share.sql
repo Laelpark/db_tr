@@ -41,5 +41,33 @@ FROM share_member a
 where 1=1
     and name like '%%엘'
 ;
-    
-ALTER TABLE share ADD COLUMN DelNy tinyint after price;
+
+
+ALTER TABLE share ADD COLUMN likeCount int after createDate;
+
+CREATE TABLE IF NOT EXISTS `per_project`.`like` (
+  `likeSeq` INT NOT NULL AUTO_INCREMENT,
+  `memberSeq` VARCHAR(45) NOT NULL,
+  `shareSeq` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`likeSeq`))
+ENGINE = InnoDB
+;
+
+SELECT
+			c.food_div
+			,c.title
+			,c.people_num
+			,c.info
+			,c.place
+			,c.time
+			,c.price
+			,c.DelNy
+			,c.createDate
+			FROM share c
+		WHERE 1=1		
+			and share_member_seq = 34
+		ORDER BY c.seq DESC
+	;
+
+
+
