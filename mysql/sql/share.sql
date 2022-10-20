@@ -54,7 +54,8 @@ ENGINE = InnoDB
 ;
 
 SELECT
-			c.food_div
+			c.seq
+			,c.food_div
 			,c.title
 			,c.people_num
 			,c.info
@@ -69,5 +70,20 @@ SELECT
 		ORDER BY c.seq DESC
 	;
 
+SELECT
+			c.food_div
+			,c.title
+			,c.people_num
+			,c.info
+			,c.place
+			,c.time
+			,c.price
+			,c.DelNy
+			,c.createDate
+		FROM share c
+		WHERE 1=1	
+		and share_member_seq = #{34}
+		ORDER BY c.seq DESC
+        ;
 
 
