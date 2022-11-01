@@ -1,6 +1,8 @@
 USE per_project;
 select * from share;
 
+show index from share;
+
 SELECT
 	a.seq
 	,a.id
