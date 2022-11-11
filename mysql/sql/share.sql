@@ -72,20 +72,7 @@ SELECT
 		ORDER BY c.seq DESC
 	;
 
-SELECT
-			c.food_div
-			,c.title
-			,c.people_num
-			,c.info
-			,c.place
-			,c.time
-			,c.price
-			,c.DelNy
-			,c.createDate
-		FROM share c
-		WHERE 1=1	
-		and share_member_seq = #{34}
-		ORDER BY c.seq DESC
-        ;
-
-
+select a.* 
+from ( SELECT c.seq ,c.food_div ,c.title ,c.people_num ,c.info ,c.place ,c.time 
+,c.price ,c.DelNy ,c.createDate ,f.img ,f.likeNy FROM share c left JOIN favorite f on f.shareSeq 
+= c.seq WHERE 1=1 ORDER BY c.seq DESC limit 99999999999 ) a limit 5 offset 10 ;
