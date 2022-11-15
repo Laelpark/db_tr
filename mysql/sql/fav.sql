@@ -1,5 +1,3 @@
-SELECT * FROM per_project.favorite;
-
 select a.* 
 from (      
 SELECT    

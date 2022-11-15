@@ -1,6 +1,8 @@
 USE per_project;
 select * from share;
 
+select count(*) from share;
+
 show index from share;
 
 SELECT
@@ -76,3 +78,41 @@ select a.*
 from ( SELECT c.seq ,c.food_div ,c.title ,c.people_num ,c.info ,c.place ,c.time 
 ,c.price ,c.DelNy ,c.createDate ,f.img ,f.likeNy FROM share c left JOIN favorite f on f.shareSeq 
 = c.seq WHERE 1=1 ORDER BY c.seq DESC limit 99999999999 ) a limit 5 offset 10 ;
+
+
+SELECT
+			c.seq
+			,c.food_div
+			,c.title
+			,c.people_num
+			,c.info
+			,c.place
+			,c.date
+			,c.time
+			,c.price
+			,c.DelNy
+			,c.createDate 
+			,c.likeCount 
+			,f.img
+			,f.likeNy
+			,f.memberSeq
+		FROM share c
+			LEFT JOIN favorite f on f.shareSeq = c.seq  
+		WHERE 1=1;
+        
+ SELECT
+		count(*)
+		FROM share c
+			LEFT JOIN favorite f on f.shareSeq = c.seq  
+		WHERE 1=1;       
+        
+
+    SELECT 
+    f.img ,f.likeNy ,f.shareSeq , f.memberSeq
+    FROM favorite f
+    WHERE 1=1 
+		and f.memberSeq = '1' ;
+select a.* from ( SELECT c.seq ,c.food_div ,c.title ,c.people_num ,c.info ,c.place ,c.date 
+,c.time ,c.price ,c.DelNy ,c.createDate ,c.likeCount ,f.img ,f.likeNy ,f.memberSeq FROM share 
+c LEFT JOIN favorite f on f.shareSeq = c.seq WHERE 1=1 and share_member_seq="1" ORDER BY c.seq DESC limit 99999999999 
+) a limit 5 offset 0 
