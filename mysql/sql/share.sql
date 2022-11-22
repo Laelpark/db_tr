@@ -116,3 +116,10 @@ select a.* from ( SELECT c.seq ,c.food_div ,c.title ,c.people_num ,c.info ,c.pla
 ,c.time ,c.price ,c.DelNy ,c.createDate ,c.likeCount ,f.img ,f.likeNy ,f.memberSeq FROM share 
 c LEFT JOIN favorite f on f.shareSeq = c.seq WHERE 1=1 and share_member_seq="1" ORDER BY c.seq DESC limit 99999999999 
 ) a limit 5 offset 0 
+
+CREATE TABLE IF NOT EXISTS `per_project`.`chat` (
+  `chatSeq` INT NOT NULL AUTO_INCREMENT,
+  `chatDelNy` INT NULL,
+  `chatCreateDate` TIMESTAMP NULL,
+  PRIMARY KEY (`chatSeq`))
+ENGINE = InnoDB;
