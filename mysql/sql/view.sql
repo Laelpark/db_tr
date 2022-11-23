@@ -36,3 +36,17 @@ select getShare_memberName(1)
 
 SET GLOBAL log_bin_trust_function_creators = 1
 ;
+
+CREATE TABLE IF NOT EXISTS `per_project`.`chat` (
+  `chatSeq` INT NOT NULL AUTO_INCREMENT,
+  `chatDelNy` INT NULL,
+  `chatCreateDate` TIMESTAMP NULL,
+  PRIMARY KEY (`chatSeq`))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `per_project`.`chatUser` (
+  `cuSeq` INT NOT NULL AUTO_INCREMENT,
+  `cuMember` INT NULL,
+  `cuChatSeq` INT NULL,
+  PRIMARY KEY (`cuSeq`))
+ENGINE = InnoDB;
